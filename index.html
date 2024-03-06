@@ -38,6 +38,12 @@
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+            touch-action: pinch-zoom;
+            transform-origin: center center;
+            transition: transform 0.5s;
+        }
+        .reel.scalable {
+            transform: scale(1.2);
         }
         .post-image {
             flex: 0 0 auto;
@@ -65,6 +71,17 @@
             cursor: pointer;
             transition: transform 0.2s ease;
         }
+            /* Your global styles here */
+
+        /* Styles for the zoomable component */
+        /* #reel {
+        touch-action: pinch-zoom;
+        transform-origin: center center;
+        transition: transform 0.5s;
+        }
+        #reel.scalable {
+        transform: scale(1.2);
+        } */
     </style>
 </head>
 <body>
@@ -124,52 +141,59 @@
     </div>
 
     <script>
-                let initialDistance = 0;
-                let currentScale = 1;
-                let isPinching = false;
 
-                document.getElementById('reel').addEventListener('touchstart', function (e) {
-                    if (e.touches.length === 2) {
-                        let x1 = e.touches[0].clientX;
-                        let y1 = e.touches[0].clientY;
-                        let x2 = e.touches[1].clientX;
-                        let y2 = e.touches[1].clientY;
+                            document.getElementById('reel').addEventListener('click', function () {
+                                this.classList.toggle('scalable');
+                            });
 
-                    initialDistance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-                    isPinching = true;
-                }
-            });
 
-                document.getElementById('reel').addEventListener('touchmove', function (e) {
-                    if (isPinching && e.touches.length === 2) {
-                        let x1 = e.touches[0].clientX;
-                        let y1 = e.touches[0].clientY;
-                        let x2 = e.touches[1].clientX;
-                        let y2 = e.touches[1].clientY;
+    /////////////////////////////////////////  
+    //     let initialDistance = 0;
+    //     let currentScale = 1;
+    //     let isPinching = false;
 
-                    let currentDistance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+    //     document.getElementById('reel').addEventListener('touchstart', function (e) {
+    //         if (e.touches.length === 2) {
+    //             let x1 = e.touches[0].clientX;
+    //             let y1 = e.touches[0].clientY;
+    //             let x2 = e.touches[1].clientX;
+    //             let y2 = e.touches[1].clientY;
 
-                    let delta = currentDistance - initialDistance;
+    //         initialDistance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+    //         isPinching = true;
+    //     }
+    // });
 
-                    currentScale += delta / 100;
+                //     document.getElementById('reel').addEventListener('touchmove', function (e) {
+                //         if (isPinching && e.touches.length === 2) {
+                //             let x1 = e.touches[0].clientX;
+                //             let y1 = e.touches[0].clientY;
+                //             let x2 = e.touches[1].clientX;
+                //             let y2 = e.touches[1].clientY;
 
-                    if (currentScale < 1) {
-                        currentScale = 1;
-                    }
+                                //         let currentDistance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 
-                    this.style.transform = `scale(${currentScale})`;
+                                //         let delta = currentDistance - initialDistance;
 
-                    // Update initial distance for the next move
-                    initialDistance = currentDistance;
-                    } else if (!isPinching) {
-                        this.style.transform = `scale(1)`;
-                }
+                                //         currentScale += delta / 100;
 
-            });
+                                //         if (currentScale < 1) {
+                                //             currentScale = 1;
+                                //         }
 
-            document.getElementById('reel').addEventListener('touchend', function (e) {
-                isPinching = false;
-            });
+                                //         this.style.transform = `scale(${currentScale})`;
+
+                                //         // Update initial distance for the next move
+                                //         initialDistance = currentDistance;
+                                //         } else if (!isPinching) {   // This is not working, ask chatgpt
+                                //             this.style.transform = `scale(1)`;
+                                //     }
+
+                                // });
+
+                                // document.getElementById('reel').addEventListener('touchend', function (e) {
+                                //     isPinching = false;
+                                // });
     </script>
 </body>
 </html>
