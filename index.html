@@ -129,49 +129,49 @@
     </div>
 
     <script>
-        // let initialDistance = 0;
-        // let currentScale = 1;
-        // let isPinching = false;
+                let initialDistance = 0;
+                let currentScale = 1;
+                let isPinching = false;
 
-        // document.getElementById('reel').addEventListener('touchstart', function(e) {
-        //     if (e.touches.length === 2) {
-        //         let x1 = e.touches[0].clientX;
-        //         let y1 = e.touches[0].clientY;
-        //         let x2 = e.touches[1].clientX;
-        //         let y2 = e.touches[1].clientY;
+                document.getElementById('reel').addEventListener('touchstart', function (e) {
+                    if (e.touches.length === 2) {
+                        let x1 = e.touches[0].clientX;
+                        let y1 = e.touches[0].clientY;
+                        let x2 = e.touches[1].clientX;
+                        let y2 = e.touches[1].clientY;
 
-        //         initialDistance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-        //         isPinching = true;
-        //     }
-        // });
+                    initialDistance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+                    isPinching = true;
+                }
+            });
 
-        // document.getElementById('reel').addEventListener('touchmove', function(e) {
-        //     if (isPinching && e.touches.length === 2) {
-        //         let x1 = e.touches[0].clientX;
-        //         let y1 = e.touches[0].clientY;
-        //         let x2 = e.touches[1].clientX;
-        //         let y2 = e.touches[1].clientY;
+                document.getElementById('reel').addEventListener('touchmove', function (e) {
+                    if (isPinching && e.touches.length === 2) {
+                        let x1 = e.touches[0].clientX;
+                        let y1 = e.touches[0].clientY;
+                        let x2 = e.touches[1].clientX;
+                        let y2 = e.touches[1].clientY;
 
-        //         let currentDistance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+                    let currentDistance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 
-        //         let delta = currentDistance - initialDistance;
+                    let delta = currentDistance - initialDistance;
 
-        //         currentScale += delta / 100;
+                    currentScale += delta / 100;
 
-        //         if (currentScale < 1) {
-        //             currentScale = 1;
-        //         }
+                    if (currentScale < 1) {
+                        currentScale = 1;
+                    }
 
-        //         this.style.transform = `scale(${currentScale})`;
+                    this.style.transform = `scale(${currentScale})`;
 
-        //         // Update initial distance for the next move
-        //         initialDistance = currentDistance;
-        //     }
-        // });
+                    // Update initial distance for the next move
+                    initialDistance = currentDistance;
+                }
+            });
 
-        // document.getElementById('reel').addEventListener('touchend', function(e) {
-        //     isPinching = false;
-        // });
+            document.getElementById('reel').addEventListener('touchend', function (e) {
+                isPinching = false;
+            });
     </script>
 </body>
 </html>
