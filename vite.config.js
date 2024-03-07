@@ -1,9 +1,8 @@
 import Vue from '@vitejs/plugin-vue'
 
 export default {
-  plugins: [Vue()]
+  plugins: [Vue()],
+  base: "/annaruizferrer/",
+  publicPath:  "/annaruizferrer/"
 }
 
-module.exports = {
-    publicPath:  "/annaruizferrer/"
-  };
