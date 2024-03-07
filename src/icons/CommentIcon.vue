@@ -1,1 +1,1 @@
-<template><v-icon name="bi-chat" /></template>
+<template><v-icon :color="'#36454F'" name="ri-chat-3-line" /></template>

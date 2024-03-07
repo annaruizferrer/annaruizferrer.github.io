@@ -1,1 +1,1 @@
-<template><v-icon name="bi-hand-thumbs-up" /></template>
+<template><v-icon :color="'#36454F'" name="ri-thumb-up-line" /></template>

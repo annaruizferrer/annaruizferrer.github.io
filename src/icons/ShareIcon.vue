@@ -1,1 +1,1 @@
-<template><v-icon name="bi-send" /></template>
+<template><v-icon :color="'#36454F'" name="ri-send-plane-fill" /></template>
