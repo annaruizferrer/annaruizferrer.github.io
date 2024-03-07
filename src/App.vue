@@ -91,7 +91,7 @@ section {
 }
 
 svg {
-    fill: #36454F;
+    fill: rgba(54, 69, 79, 0.8);
     display: block;
 }
 
@@ -127,21 +127,21 @@ svg {
           height: 40px;
           border-radius: 50%;
           margin-right: 10px;
+          border: 0.8px solid rgba(54, 69, 79, 0.8);
       }
 
       .username {
           font-weight: bold;
           float: left;
-          color: #36454F;
+          color: rgba(54, 69, 79, 0.8);
       }
 
       .info-text {
-          font-weight: bold;
-          font-size: 12px;;
+          font-size: 14px;
           float: left;
-          color: #36454F;
+          color: rgba(54, 69, 79, 0.8);
           padding:  0 5px;
-          font-weight: normal;
+          font-weight: 500;
       }
 
       .reel {
@@ -189,4 +189,5 @@ svg {
           cursor: pointer;
           transition: transform 0.2s ease;
       }
+      
 </style>
