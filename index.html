@@ -8,9 +8,19 @@
         /* Basic styling */
         body {
             font-family: Arial, sans-serif;
+            /* font-family: Inter, sans-serif; */
             margin: 0;
             padding: 0;
             background-color: #fafafa;
+        }
+        section {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            justify-content: space-between;
+        }
+        svg {
+            fill:#36454F;
         }
         .post {
             max-width: 600px;
@@ -19,9 +29,18 @@
             overflow: hidden;
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         }
-        .post-header {
+        .profile {
             display: flex;
             align-items: center;
+        }
+        .side {
+            display: flex;
+            align-items: center;
+        }
+
+        .icons {
+            width: 40px;
+            height: 40px;
             padding: 10px;
         }
         .profile-pic {
@@ -32,6 +51,13 @@
         }
         .username {
             font-weight: bold;
+            float: left;
+            color: #36454F;
+        }
+        .info-text {
+            font-weight: bold;
+            float: left;
+            color: #36454F;
         }
         .reel {
             display: flex;
@@ -71,25 +97,25 @@
             cursor: pointer;
             transition: transform 0.2s ease;
         }
-            /* Your global styles here */
-
-        /* Styles for the zoomable component */
-        /* #reel {
-        touch-action: pinch-zoom;
-        transform-origin: center center;
-        transition: transform 0.5s;
-        }
-        #reel.scalable {
-        transform: scale(1.2);
-        } */
     </style>
 </head>
 <body>
     <div class="post">
-        <div class="post-header">
-            <img class="profile-pic" src="profile.jpg" alt="Profile Picture">
-            <span class="username">szelich</span>
-        </div>
+        <section class="post-header">
+            <div class="side">
+                <img class="profile-pic" src="profile.jpg" alt="Profile Picture">
+                <span class="username">xelc392</span>
+                </div>
+            <!-- share -->
+            <div class="icons right">
+                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dhaba5" focusable="false" aria-hidden="true"
+                    viewBox="0 0 24 24" data-testid="SendRoundedIcon">
+                    <path
+                        d="m3.4 20.4 17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91">
+                    </path>
+                </svg>
+            </div>
+        </section>
         <div class="reel" id="reel">
             <div class="post-image">
                 <img src="image1.jpg" alt="Image 1">
@@ -102,42 +128,60 @@
             </div>
             <!-- Add more post images here -->
         </div>
-    </div>
-    <div class="post">
-        <div class="post-header">
-            <img class="profile-pic" src="profile.jpg" alt="Profile Picture">
-            <span class="username">annaruiz</span>
-        </div>
-        <div class="reel" id="reel">
-            <div class="post-image">
-                <img src="image1.jpg" alt="Image 1">
+        <section class="post-footer">
+            <div class="side">
+                <!-- Like  -->
+                <!-- <div class="icons">
+                                                                                                                                                                                                                        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dhaba5" focusable="false" aria-hidden="true"
+                                                                                                                                                                                                                            viewBox="0 0 24 24" data-testid="ThumbUpAltRoundedIcon">
+                                                                                                                                                                                                                            <path
+                                                                                                                                                                                                                                d="M13.12 2.06 7.58 7.6c-.37.37-.58.88-.58 1.41V19c0 1.1.9 2 2 2h9c.8 0 1.52-.48 1.84-1.21l3.26-7.61C23.94 10.2 22.49 8 20.34 8h-5.65l.95-4.58c.1-.5-.05-1.01-.41-1.37-.59-.58-1.53-.58-2.11.01M3 21c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2s-2 .9-2 2v8c0 1.1.9 2 2 2">
+                                                                                                                                                                                                                            </path>
+                                                                                                                                                                                                                        </svg>
+                                                                                                                                                                                                                    </div> -->
+                <div class="icons">
+                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dhaba5 icon" focusable="false" aria-hidden="true"
+                        viewBox="0 0 24 24" data-testid="ThumbUpOutlinedIcon">
+                        <path
+                            d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2M9 9l4.34-4.34L12 10h9v2l-3 7H9zM1 9h4v12H1z">
+                        </path>
+                    </svg>
+                </div>
+            <!-- comment -->
+            <!-- <div class="icons"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dhaba5" focusable="false"
+                                                                                                                                                                                                                                                                                                                                aria-hidden="true" viewBox="0 0 24 24" data-testid="ChatBubbleRoundedIcon">
+                                                                                                                                                                                                                                                                                                                                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2"></path>
+                                                                                                                                                                                                                                                                                                                            </svg>
+                                                                                                                                                                                                                                                                                                                        </div> -->
+            <div class="icons">
+                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dhaba5" focusable="false" aria-hidden="true"
+                    viewBox="0 0 24 24" data-testid="ChatBubbleOutlineRoundedIcon">
+                    <path
+                        d="M20 4v12H5.17L4 17.17V4zm0-2H4c-1.1 0-2 .9-2 2v15.59c0 .89 1.08 1.34 1.71.71L6 18h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2">
+                    </path>
+                </svg>
             </div>
-            <div class="post-image">
-                <img src="image2.jpg" alt="Image 2">
+            <span class="info-text">101 likes 10 comments</span>
             </div>
-            <div class="post-image">
-                <img src="image3.jpg" alt="Image 3">
+            <!-- save -->
+            <!-- <div class="icons">
+                                                                                                                                                                                                                                                                                                                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dhaba5" focusable="false" aria-hidden="true"
+                                                                                                                                                                                                                                                                                                                    viewBox="0 0 24 24" data-testid="StarRoundedIcon">
+                                                                                                                                                                                                                                                                                                                    <path
+                                                                                                                                                                                                                                                                                                                        d="m12 17.27 4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08z">
+                                                                                                                                                                                                                                                                                                                    </path>
+                                                                                                                                                                                                                                                                                                                </svg>
+                                                                                                                                                                                                                                                                                                            </div> -->
+            
+            <div class="icons">
+                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dhaba5" focusable="false" aria-hidden="true"
+                    viewBox="0 0 24 24" data-testid="StarBorderRoundedIcon">
+                    <path
+                        d="m19.65 9.04-4.84-.42-1.89-4.45c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5 4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.73 3.67-3.18c.67-.58.32-1.68-.56-1.75M12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28z">
+                    </path>
+                </svg>
             </div>
-            <!-- Add more post images here -->
-        </div>
-    </div>
-    <div class="post">
-        <div class="post-header">
-            <img class="profile-pic" src="profile.jpg" alt="Profile Picture">
-            <span class="username">szelich</span>
-        </div>
-        <div class="reel" id="reel">
-            <div class="post-image">
-                <img src="image1.jpg" alt="Image 1">
-            </div>
-            <div class="post-image">
-                <img src="image2.jpg" alt="Image 2">
-            </div>
-            <div class="post-image">
-                <img src="image3.jpg" alt="Image 3">
-            </div>
-            <!-- Add more post images here -->
-        </div>
+        </section>
     </div>
 
     <script>
