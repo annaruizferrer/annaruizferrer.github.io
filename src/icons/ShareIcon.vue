@@ -1,0 +1,1 @@
+<template><v-icon name="bi-send" /></template>
