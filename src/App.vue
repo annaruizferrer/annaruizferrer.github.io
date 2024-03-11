@@ -3,8 +3,8 @@
     <div class="header-text">What's new?</div>
     <ArrowIcon  class="arrow"/>
   </section>
-  <Post :images="images1" :profile-pic="'profile.jpg'" :username="'xelc392'" :zoomLevel="zoomLevel" :zoomIn="zoomIn" />
-  <Post :images="images2" :profile-pic="'profile2.jpg'" :username="'piri89'" :zoomLevel="zoomLevel" :zoomIn="zoomIn" />
+  <Post :images="images1" :profile-pic="'https://annaruizferrer.github.io/profile.jpg'" :username="'xelc392'" :zoomLevel="zoomLevel" :zoomIn="zoomIn" />
+  <Post :images="images2" :profile-pic="'https://annaruizferrer.github.io/profile2.jpg'" :username="'piri89'" :zoomLevel="zoomLevel" :zoomIn="zoomIn" />
 </template>
 
 <script setup>
@@ -13,12 +13,12 @@ import Post from './Post.vue'
 
 import ArrowIcon from './icons/ArrowIcon.vue';
 const images1 = [
-    { src: "/image1.jpg" },
-    { src: "/image2.jpg" },
-    { src: "/image3.jpg" },
+    { src: "https://annaruizferrer.github.io/image1.jpg" },
+    { src: "https://annaruizferrer.github.io/image2.jpg" },
+    { src: "https://annaruizferrer.github.io/image3.jpg" },
   ];
 const images2 = [
-    { src: "/image.jpg" },
+    { src: "https://annaruizferrer.github.io/image.jpg" },
   ];
 const activeIndex = ref(0);
 // const zoomLevel = ref(1);
