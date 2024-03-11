@@ -1,0 +1,1 @@
+<template><v-icon :color="'#36454F'" name="ri-arrow-down-s-line" /></template>
