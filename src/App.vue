@@ -9,7 +9,7 @@
 	        <div class="profile-pic">
 				<img :src="'/profile.jpg'" alt="Profile Picture" />
 			</div>
-	        <span class="username">{{ xelc392 }}</span>
+	        <span class="username"> xelc392 </span>
 	      </div>
 	      <SaveIcon  class="icons star"/>
 	    </section>
