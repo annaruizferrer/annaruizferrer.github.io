@@ -9,7 +9,7 @@
 	        <div class="profile-pic">
 				<img :src="'/profile.jpg'" alt="Profile Picture" />
 			</div>
-	        <span class="username">{{ username }}</span>
+	        <span class="username">{{ xelc392 }}</span>
 	      </div>
 	      <SaveIcon  class="icons star"/>
 	    </section>
@@ -31,7 +31,7 @@
 	        :key="index"
 	        class="dot"
 	        :class="{ active: activeIndex === index }"
-	        @click="goToImage(index)"º
+	        @click="goToImage(index)"
 	      ></span>
 	    </div>
 	      <div class="post-image" v-for="(image, index) in images1" :key="index">
@@ -53,6 +53,12 @@
 </template>
 
 <script setup>
+import ShareIcon from './icons/ShareIcon.vue';
+import LikeIcon from './icons/LikeIcon.vue';
+import CommentIcon from './icons/CommentIcon.vue';
+import SaveIcon from './icons/SaveIcon.vue';
+
+
 import { ref } from 'vue';
 import Post from './Post.vue'
 
