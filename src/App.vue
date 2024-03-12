@@ -3,63 +3,11 @@
     <div class="header-text">What's new?</div>
     <ArrowIcon  class="arrow"/>
   </section>
-  <div class="post">
-	    <section class="post-header">
-	      <div class="side">
-	        <div class="profile-pic">
-				<img :src="'/profile.jpg'" alt="Profile Picture" />
-			</div>
-	        <span class="username"> xelc392 </span>
-	      </div>
-	      <SaveIcon  class="icons star"/>
-	    </section>
-	    <div class="reel-container">
-	    <div v-if="images1.length > 1" class="dots-container">
-	      <span
-	        v-for="(image, index) in images1"
-	        :key="index"
-	        class="dot"
-	        :class="{ active: activeIndex === index }"
-	        @click="goToImage(index)"
-	      ></span>
-	    </div>
-	    <div class="reel" id="reel" @scroll="handleScroll">
-	      <div v-if="images1.length > 1" class="dots-container">
-	      <span
-		  	v-if="images1.length > 1"
-	        v-for="(image, index) in images1"
-	        :key="index"
-	        class="dot"
-	        :class="{ active: activeIndex === index }"
-	        @click="goToImage(index)"
-	      ></span>
-	    </div>
-	      <div class="post-image" v-for="(image, index) in images1" :key="index">
-	        <img :src="image.src" :alt="'Image ' + (index + 1)" :style="{ transform: `scale(${zoomLevel})` }"
-	            @click="zoomIn"/>
-	      </div>
-	    </div>
-	  </div>
-	    <section class="post-footer">
-	      <div class="side">
-	          <LikeIcon class="icons"/>
-	          <CommentIcon class="icons" />
-	          <span class="info-text"> <b>101</b>  likes and  <b>11</b> comments</span>
-	        </div>
-	        <ShareIcon class="icons"/>
-	    </section>
-	</div>
+  <Post :images="images1" :profile-pic="'https://annaruizferrer.github.io/profile.jpg'" :username="'xelc392'" :zoomLevel="zoomLevel" :zoomIn="zoomIn" />
   <Post :images="images2" :profile-pic="'https://annaruizferrer.github.io/profile2.jpg'" :username="'piri89'" :zoomLevel="zoomLevel" :zoomIn="zoomIn" />
 </template>
 
 <script setup>
-import ShareIcon from './icons/ShareIcon.vue';
-import LikeIcon from './icons/LikeIcon.vue';
-import CommentIcon from './icons/CommentIcon.vue';
-import SaveIcon from './icons/SaveIcon.vue';
-
-
-import { ref } from 'vue';
 import Post from './Post.vue'
 
 import ArrowIcon from './icons/ArrowIcon.vue';
@@ -71,25 +19,7 @@ const images1 = [
 const images2 = [
     { src: "https://annaruizferrer.github.io/image.jpg" },
   ];
-const activeIndex = ref(0);
-// const zoomLevel = ref(1);
-// function zoomIn() {
-//   zoomLevel.value += 0.2; // Increase the zoom level by 0.2 (adjust as needed)
-// }
-function handleScroll() {
-  const reel = document.getElementById('reel');
-  const scrollPosition = reel.scrollLeft;
-  const imageWidth = reel.offsetWidth;
-  const newIndex = Math.round(scrollPosition / imageWidth);
-  activeIndex.value = newIndex;
-  console.log('activeIndex', activeIndex.value)
-} 
 
-function goToImage(index) {
-  const reel = document.getElementById('reel');
-  const imageWidth = reel.offsetWidth;
-  reel.scrollTo({ left: imageWidth * index, behavior: 'smooth' });
-}
 </script>
 
 
