@@ -27,7 +27,7 @@
 	        :key="index"
 	        class="dot"
 	        :class="{ active: activeIndex === index }"
-	        @click="goToImage(index)"º
+	        @click="goToImage(index)"
 	      ></span>
 	    </div>
 	      <div class="post-image" v-for="(image, index) in images" :key="index">
