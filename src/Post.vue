@@ -44,7 +44,7 @@
 	        </div>
 	        <ShareIcon class="icons"/>
 	    </section>
-	  </div>
+	</div>
 </template>
 
 <script setup lang="ts">
