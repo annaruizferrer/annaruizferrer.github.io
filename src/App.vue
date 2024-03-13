@@ -3,7 +3,7 @@
     <div class="header-text">What's new?</div>
     <ArrowIcon  class="arrow"/>
   </section>
-  <Post :images="images1" :profile-pic="'https://annaruizferrer.github.io/profile.jpg'" :username="'xelc392'" :zoomLevel="zoomLevel" :zoomIn="zoomIn" />
+  <Post :images="images1" :profile-pic="'https://annaruizferrer.github.io/profile.jpg'" :username="'manu392'" :zoomLevel="zoomLevel" :zoomIn="zoomIn" />
   <Post :images="images2" :profile-pic="'https://annaruizferrer.github.io/profile2.jpg'" :username="'piri89'" :zoomLevel="zoomLevel" :zoomIn="zoomIn" />
 </template>
 
