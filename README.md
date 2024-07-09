@@ -1,4 +1,4 @@
-# sand
+# Playground 
 
 ## Project setup
 ```

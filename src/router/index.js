@@ -15,7 +15,9 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_API_URL),
-  routes
+  routes: [
+    '/the-fractals', '/the-terrain', '/the-cube',
+  ]
 })
 
 export default router
