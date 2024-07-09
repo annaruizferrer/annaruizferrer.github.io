@@ -1,25 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import ProjectWrapper from '@/views/ProjectWrapper.vue'
 
 const routes = [
   {
     path: '/',
-    redirect: '/the-cube',
-  },
-  {
-    path: '/the-cube',
-    name: 'Project Wrapper',
-    component: ProjectWrapper
-  },
-  {
-    path: '/the-terrain',
-    name: 'Project Wrapper',
-    component: ProjectWrapper
-  },
-  {
-    path: '/the-cube',
-    name: 'Project Wrapper',
-    component: ProjectWrapper
+    redirect: '/the-fractals',
   },
   {
     path: '/:id',
@@ -29,7 +14,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.VITE_API_URL),
+  history: createWebHashHistory(import.meta.env.VITE_API_URL),
   routes
 })
 
