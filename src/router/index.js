@@ -4,7 +4,22 @@ import ProjectWrapper from '@/views/ProjectWrapper.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/the-fractals',
+    redirect: '/the-cube',
+  },
+  {
+    path: '/the-cube',
+    name: 'Project Wrapper',
+    component: ProjectWrapper
+  },
+  {
+    path: '/the-terrain',
+    name: 'Project Wrapper',
+    component: ProjectWrapper
+  },
+  {
+    path: '/the-cube',
+    name: 'Project Wrapper',
+    component: ProjectWrapper
   },
   {
     path: '/:id',
@@ -15,9 +30,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_API_URL),
-  routes: [
-    '/the-fractals', '/the-terrain', '/the-cube',
-  ]
+  routes
 })
 
 export default router
